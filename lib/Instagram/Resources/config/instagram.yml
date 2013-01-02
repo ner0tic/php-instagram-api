@@ -1,0 +1,2 @@
+url: 'https://api.instagram.com/v1/:path'
+certificate: false

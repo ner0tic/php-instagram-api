@@ -1,0 +1,23 @@
+{
+    "name": "ner0tic/php-instagram-api",
+    "type": "library",
+    "description": "Instagram API client",
+    "homepage": "https://github.com/ner0tic/php-instagram-api",
+    "keywords": ["instagram", "api", "photo", "social"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "David Durost",
+            "homepage": "http://daviddurost.net",
+            "email":  "david.durost@gmail.com"
+        }
+    ],
+    "require": {
+        "php":                ">=5.3.2",
+        "ner0tic/php-api-core": "*"
+    },
+    "autoload": {
+        "psr-0": { "Instagram\\": "lib/" }
+    },
+    "minimum-stability": "dev"
+}
