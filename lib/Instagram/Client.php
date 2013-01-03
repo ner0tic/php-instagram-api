@@ -17,7 +17,7 @@ class Client extends BaseClient
         {
             switch( $name ) 
             {
-                case 'user':
+                case 'users':
                     $api = new Api\User( $this );
                     break;
                 case 'relationships':
