@@ -14,12 +14,12 @@ class Users extends InstagramApi
     {
         if( null === $id )
         {
-            if( null === $this->getAuthClientId() )
+            if( null === parent::getAuthClientId() )
             {
                 return parent::get( 'users/self', $params, $requestOpts );
             }
       
-            return parent::get( 'users/' . $this->getAuthClientId(), $params, $requestOpts );      
+            return parent::get( 'users/' . parent::getAuthClientId(), $params, $requestOpts );      
         }
             
         return parent::get( 'users/' . $id, $params,  $requestOpts );
@@ -39,12 +39,12 @@ class Users extends InstagramApi
 
         if( null === $id )
         {
-            if( null === $this->getAuthClientId() )
+            if( null === parent::getAuthClientId() )
             {
                 return $this->get( 'self/media', array(), $requestOpts );
             }
 
-            return $this->get( $this->getAuthClientId() . '/media/recent', array(), $requestOpts );      
+            return $this->get( parent::getAuthClientId() . '/media/recent', array(), $requestOpts );      
         }
 
         return $this->get( $id . '/media/recent', array(), requestOpts );
@@ -64,12 +64,12 @@ class Users extends InstagramApi
 
         if( null === $id )
         {
-            if( null === $this->getAuthClientId() )
+            if( null === parent::getAuthClientId() )
             {
                 return $this->get( 'self/media/liked', array(), $requestOpts );
             }
 
-            return $this->get( $this->getAuthClientId() . '/media/liked', array(), $requestOpts );      
+            return $this->get( parent::getAuthClientId() . '/media/liked', array(), $requestOpts );      
         }
 
         return $this->get( $id . '/media/liked', array(), $requestOpts );
