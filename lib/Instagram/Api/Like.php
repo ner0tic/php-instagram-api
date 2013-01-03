@@ -1,8 +1,6 @@
 <?php
 namespace Instagram\Api;
 
-use Instagram\Media;
-
 class Like extends Media
 {
     public function getLikes( $id, $requestOpts = array() )

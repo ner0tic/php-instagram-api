@@ -3,11 +3,11 @@ namespace Instagram\Api;
 
 use \Core\AbstractApi;
 
-class Media extends AbstractApi
+class Media extends InstagramApi
 {
     public function get( $id, $requestOpts = array() )
     {
-        return parent::get('media/' . $id, $requestOpts );
+        return parent::get( 'media/' . $id, $requestOpts );
     }
     
     public function search( $parameters = array(), $requestOpts = array() )
@@ -19,6 +19,6 @@ class Media extends AbstractApi
     
     public function popular( $requestOpts = array() )
     {
-        return $this->get( 'popular'. $requestOpts );
+        return $this->get( 'popular', $requestOpts );
     }
 }

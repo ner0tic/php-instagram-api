@@ -1,9 +1,7 @@
 <?php
 namespace Instagram\Api;
 
-use \Core\AbstractApi;
-
-class Users extends AbstractApi
+class Users extends InstagramApi
 {
     /**
    * Return array of either the given user id, the currently logged in user
@@ -21,10 +19,10 @@ class Users extends AbstractApi
                 return parent::get( 'users/self', $requestOpts );
             }
       
-            return parent::get( 'users/'.$this->getAuthClientId(), $requestOpts );      
+            return parent::get( 'users/' . $this->getAuthClientId(), $requestOpts );      
         }
             
-        return parent::get( 'users/'.$id, $requestOpts );
+        return parent::get( 'users/' . $id, $requestOpts );
     }
   
     /**
@@ -46,10 +44,10 @@ class Users extends AbstractApi
                 return $this->get( 'self/media', $requestOpts );
             }
 
-            return $this->get( $this->getAuthClientId().'/media/recent', $requestOpts );      
+            return $this->get( $this->getAuthClientId() . '/media/recent', $requestOpts );      
         }
 
-        return $this->get( $id.'/media/recent', $requestOpts );
+        return $this->get( $id . '/media/recent', $requestOpts );
     }
   
     /**
@@ -71,10 +69,10 @@ class Users extends AbstractApi
                 return $this->get( 'self/media/liked', $requestOpts );
             }
 
-            return $this->get( $this->getAuthClientId().'/media/liked', $requestOpts );      
+            return $this->get( $this->getAuthClientId() . '/media/liked', $requestOpts );      
         }
 
-        return $this->get( $id.'/media/liked', $requestOpts );
+        return $this->get( $id . '/media/liked', $requestOpts );
     }
   
     public function getFeed( $id = null, $requestOpts = array() )
@@ -89,7 +87,7 @@ class Users extends AbstractApi
             return $this->get( $this->getAuthClient() .'/feed', $requestOpts );
         }
 
-        return $this->get( $id .'/feed', $requestOpts );
+        return $this->get( $id . '/feed', $requestOpts );
     }
 
     public function search( $querystring, $requestOpts = array() )

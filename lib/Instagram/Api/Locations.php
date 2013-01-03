@@ -1,18 +1,16 @@
 <?php
 namespace Instagram\Api;
 
-use \Core\AbstractApi;
-
-class Comments extends AbstractApi
+class Comments extends InstagramApi
 {
     public function get( $id, $requestOpts )
     {
-        return parent::get('locations/' . $id, $requestOpts );
+        return parent::get( 'locations/' . $id, $requestOpts );
     }
     
     public function getRecentMedia( $id, $reqestOpts = array() )
     {
-        return $this->get( $id .'/media/recent', $reqestOpts );
+        return $this->get( $id . '/media/recent', $reqestOpts );
     }
     
     public function search( $parameters = array(), $requestOpts = array() )

@@ -1,9 +1,7 @@
 <?php
 namespace Instagram\Api;
 
-use \Core\AbstractApi;
-
-class Comments extends AbstractApi
+class Comments extends InstagramApi
 {
     public function get( $tag = 'nofilter', $requestOpts = array() )
     {
@@ -15,8 +13,8 @@ class Comments extends AbstractApi
         return $this->get( $id . '/media/recent', $requestOpts );
     }
     
-    public function search ($queryterm, $requestOpts = array() )
+    public function search ($querystring, $requestOpts = array() )
     {
-        return $this->get('search/' . $queryterm, $requestOpts );
+        return $this->get('search/' . $querystrings, $requestOpts );
     }
 }
