@@ -31,9 +31,9 @@ class Users extends InstagramApi
      * @param array $requestOpts
      * @return type
      */
-    public function getRecentMedia( $id = null, $requestOpts = array() )
+    public function getRecentMedia( $id = null, $params = array(), $requestOpts = array() )
     {
-        $requestOpts = array_merge( $requestOpts, array( 
+        $params = array_merge( $params, array( 
             'limit' =>  10
         ) );
 
