@@ -41,13 +41,13 @@ class Users extends InstagramApi
         {
             if( null === parent::getAuthClientId() )
             {
-                return $this->get( 'self/media', array(), $requestOpts );
+                return $this->get( 'self/media', $params, $requestOpts );
             }
 
-            return $this->get( parent::getAuthClientId() . '/media/recent', array(), $requestOpts );      
+            return $this->get( parent::getAuthClientId() . '/media/recent', $params, $requestOpts );      
         }
 
-        return $this->get( $id . '/media/recent', array(), requestOpts );
+        return $this->get( $id . '/media/recent', $params, requestOpts );
     }
   
     /**
