@@ -10,19 +10,19 @@ class Users extends InstagramApi
    * @param array $requestOpts http query parameters
    * @return type
    */
-    public function get( $id = null, $requestOpts = array() )
+    public function get( $id = null, $params = array(), $requestOpts = array() )
     {
         if( null === $id )
         {
-            if( null === $this->getAuthClientId() )
+            if( null === parent::getAuthClientId() )
             {
-                return parent::get( 'users/self', array(), $requestOpts );
+                return parent::get( 'users/self', $params, $requestOpts );
             }
       
-            return parent::get( 'users/' . $this->getAuthClientId(), array(), $requestOpts );      
+            return parent::get( 'users/' . parent::getAuthClientId(), $params, $requestOpts );      
         }
             
-        return parent::get( 'users/' . $id, array(),  $requestOpts );
+        return parent::get( 'users/' . $id, $params,  $requestOpts );
     }
   
     /**
@@ -31,23 +31,23 @@ class Users extends InstagramApi
      * @param array $requestOpts
      * @return type
      */
-    public function getRecentMedia( $id = null, $requestOpts = array() )
+    public function getRecentMedia( $id = null, $params = array(), $requestOpts = array() )
     {
-        $requestOpts = array_merge( $requestOpts, array( 
+        $params = array_merge( $params, array( 
             'limit' =>  10
         ) );
 
         if( null === $id )
         {
-            if( null === $this->getAuthClientId() )
+            if( null === parent::getAuthClientId() )
             {
-                return $this->get( 'self/media', $requestOpts );
+                return $this->get( 'self/media', $params, $requestOpts );
             }
 
-            return $this->get( $this->getAuthClientId() . '/media/recent', $requestOpts );      
+            return $this->get( parent::getAuthClientId() . '/media/recent', $params, $requestOpts );      
         }
 
-        return $this->get( $id . '/media/recent', $requestOpts );
+        return $this->get( $id . '/media/recent', $params, requestOpts );
     }
   
     /**
@@ -64,15 +64,15 @@ class Users extends InstagramApi
 
         if( null === $id )
         {
-            if( null === $this->getAuthClientId() )
+            if( null === parent::getAuthClientId() )
             {
-                return $this->get( 'self/media/liked', $requestOpts );
+                return $this->get( 'self/media/liked', array(), $requestOpts );
             }
 
-            return $this->get( $this->getAuthClientId() . '/media/liked', $requestOpts );      
+            return $this->get( parent::getAuthClientId() . '/media/liked', array(), $requestOpts );      
         }
 
-        return $this->get( $id . '/media/liked', $requestOpts );
+        return $this->get( $id . '/media/liked', array(), $requestOpts );
     }
   
     public function getFeed( $id = null, $requestOpts = array() )
@@ -81,22 +81,24 @@ class Users extends InstagramApi
         {
             if( null === $this->getAuthClient() )
             {
-                return $this->get( 'self/feed', $requestOpts );
+                return $this->get( 'self/feed', array(), $requestOpts );
             }
 
-            return $this->get( $this->getAuthClient() .'/feed', $requestOpts );
+            return $this->get( $this->getAuthClient() .'/feed', array(), $requestOpts );
         }
 
-        return $this->get( $id . '/feed', $requestOpts );
+        return $this->get( $id . '/feed', array(), $requestOpts );
     }
 
     public function search( $querystring, $requestOpts = array() )
     {
         $requestOpts = array_merge( $requestOpts, array(
-            'count'   =>  10,
-            'q'       =>  $querystring
+            'count'   =>  10
         ) );
+        $params = array(
+            'q'       =>  $querystring
+        );
 
-        return $this->get( '/search', $requestOpts );
+        return $this->get( '/search', $params, $requestOpts );
     }
 }

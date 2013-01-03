@@ -3,9 +3,9 @@ namespace Instagram\Api;
 
 class Comments extends InstagramApi
 {
-    public function get( $id, $requestOpts )
+    public function get( $id, $params = array(), $requestOpts )
     {
-        return parent::get( 'locations/' . $id, $requestOpts );
+        return parent::get( 'locations/' . $id, $params, $requestOpts );
     }
     
     public function getRecentMedia( $id, $reqestOpts = array() )
@@ -13,10 +13,8 @@ class Comments extends InstagramApi
         return $this->get( $id . '/media/recent', array(), $reqestOpts );
     }
     
-    public function search( $parameters = array(), $requestOpts = array() )
+    public function search( $params = array(), $requestOpts = array() )
     {
-        $requestOpts = array_merge( $parameters, $requestOpts );
-        
-        return $this->get( 'search', $requestOpts );
+        return $this->get( 'search', $params, $requestOpts );
     }
 }

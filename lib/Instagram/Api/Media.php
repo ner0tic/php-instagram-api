@@ -5,20 +5,18 @@ use \Core\AbstractApi;
 
 class Media extends InstagramApi
 {
-    public function get( $id, $requestOpts = array() )
+    public function get( $id, $params = array(), $requestOpts = array() )
     {
-        return parent::get( 'media/' . $id, array(), $requestOpts );
+        return parent::get( 'media/' . $id, $params, $requestOpts );
     }
     
-    public function search( $parameters = array(), $requestOpts = array() )
+    public function search( $params = array(), $requestOpts = array() )
     {
-        $requestOpts = array_merge( $requestOpts, $parameters );
-        
-        return $this->get( 'search', $requestOpts );
+        return $this->get( 'search', $params, $requestOpts );
     }
     
     public function popular( $requestOpts = array() )
     {
-        return $this->get( 'popular', $requestOpts );
+        return $this->get( 'popular', array(), $requestOpts );
     }
 }
