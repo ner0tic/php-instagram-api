@@ -7,7 +7,7 @@ class Comments extends AbstractApi
 {
     public function get( $id, $requestOpts )
     {
-        return $this->get('locations/' . $id, $requestOpts );
+        return parent::get('locations/' . $id, $requestOpts );
     }
     
     public function getRecentMedia( $id, $reqestOpts = array() )

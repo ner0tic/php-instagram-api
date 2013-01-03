@@ -11,13 +11,13 @@ class Relationships extends Users
         {
             if(null === $this->getAuthClientId())
             {
-                return $this->get('self/follows', $requestOpts);
+                return parent::get('self/follows', $requestOpts);
             }
       
-            return $this->get($this->getAuthClientId().'/follows', $requestOpts);      
+            return parent::get($this->getAuthClientId().'/follows', $requestOpts);      
         }
             
-        return $this->get($id.'/follows', $requestOpts);
+        return parent::get($id.'/follows', $requestOpts);
     }
     
     public function getFollowedBy( $id = null, $requestOpts = array() )

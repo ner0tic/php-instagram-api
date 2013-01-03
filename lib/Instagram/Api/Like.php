@@ -7,7 +7,7 @@ class Like extends Media
 {
     public function getLikes( $id, $requestOpts = array() )
     {
-        return $this->get( 'media/' . $id . '/likes', $requestOpts );
+        return parent::get( $id . '/likes', $requestOpts );
     }
     
     /**

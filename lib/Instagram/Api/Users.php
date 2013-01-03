@@ -18,13 +18,13 @@ class Users extends AbstractApi
     {
       if(null === $this->getAuthClientId())
       {
-        return $this->get('users/self', $requestOpts);
+        return parent::get('users/self', $requestOpts);
       }
       
-      return $this->get('users/'.$this->getAuthClientId(), $requestOpts);      
+      return parent::get('users/'.$this->getAuthClientId(), $requestOpts);      
     }
             
-    return $this->get('users/'.$id, $requestOpts);
+    return parent::get('users/'.$id, $requestOpts);
   }
   
   /**

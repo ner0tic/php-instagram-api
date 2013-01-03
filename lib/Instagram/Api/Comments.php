@@ -7,7 +7,7 @@ class Comments extends Media
 {
     public function get( $id, $requestOpts = array() )
     {
-        return $this->get( 'media/' . $id, $requestOpts );
+        return $parent::get( $id, $requestOpts );
     }
     
     /**

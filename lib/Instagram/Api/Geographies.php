@@ -11,6 +11,6 @@ class Geographies extends AbstractApi
             'count'     =>  10
         ));
         
-        return $this->get( 'geographies/' . $id .'media/recent', $requestOpts );
+        return parent::get( 'geographies/' . $id .'media/recent', $requestOpts );
     }
 }

@@ -7,7 +7,7 @@ class Media extends AbstractApi
 {
     public function get( $id, $requestOpts = array() )
     {
-        return $this->get('media/' . $id, $requestOpts );
+        return parent::get('media/' . $id, $requestOpts );
     }
     
     public function search( $parameters = array(), $requestOpts = array() )

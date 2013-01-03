@@ -7,7 +7,7 @@ class Comments extends AbstractApi
 {
     public function get( $tag = 'nofilter', $requestOpts = array() )
     {
-        return $this->get( 'tags/' . $tag, $requestOpts );
+        return parent::get( 'tags/' . $tag, $requestOpts );
     }
     
     public function getRecentlyTagged( $tag, $requestOpts )
