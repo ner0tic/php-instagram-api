@@ -5,7 +5,7 @@ class Comments extends InstagramApi
 {
     public function get( $tag = 'nofilter', $requestOpts = array() )
     {
-        return parent::get( 'tags/' . $tag, $requestOpts );
+        return parent::get( 'tags/' . $tag, array(), $requestOpts );
     }
     
     public function getRecentlyTagged( $tag, $requestOpts )

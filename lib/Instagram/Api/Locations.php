@@ -10,7 +10,7 @@ class Comments extends InstagramApi
     
     public function getRecentMedia( $id, $reqestOpts = array() )
     {
-        return $this->get( $id . '/media/recent', $reqestOpts );
+        return $this->get( $id . '/media/recent', array(), $reqestOpts );
     }
     
     public function search( $parameters = array(), $requestOpts = array() )

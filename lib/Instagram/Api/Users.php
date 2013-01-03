@@ -16,13 +16,13 @@ class Users extends InstagramApi
         {
             if( null === $this->getAuthClientId() )
             {
-                return parent::get( 'users/self', $requestOpts );
+                return parent::get( 'users/self', array(), $requestOpts );
             }
       
-            return parent::get( 'users/' . $this->getAuthClientId(), $requestOpts );      
+            return parent::get( 'users/' . $this->getAuthClientId(), array(), $requestOpts );      
         }
             
-        return parent::get( 'users/' . $id, $requestOpts );
+        return parent::get( 'users/' . $id, array(),  $requestOpts );
     }
   
     /**

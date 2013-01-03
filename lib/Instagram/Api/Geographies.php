@@ -9,6 +9,6 @@ class Geographies extends InstagramApi
             'count'     =>  10
         ) );
         
-        return parent::get( 'geographies/' . $id . '/media/recent', $requestOpts );
+        return parent::get( 'geographies/' . $id . '/media/recent', array(), $requestOpts );
     }
 }
