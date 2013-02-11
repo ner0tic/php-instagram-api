@@ -19,4 +19,9 @@ class InstagramApi extends AbstractApi
     public function getAuthClientId() {
         return $this->client->getAuthClientId();
     }
+    
+    public function setAuthClientId( $id = null )
+    {
+        $this->client->setAuthClientId( $id );
+    }
 }
