@@ -16,7 +16,7 @@ class InstagramApi extends AbstractApi
         $this->client->getHttpClient()->setOption( 'url', 'https://api.instagram.com/v1/:path' );
         $this->client->getHttpClient()->setOption( 'certificate', false ); // 'Resources/config/certificate.pem' );
         var_dump('client: '.$client."\n...");
-        var_dump('this: '.$this->client."\n...");
+        var_dump($this->client);
         var_dump('httpclient: '.$hc);
         die('..');
     }
