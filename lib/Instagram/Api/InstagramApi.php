@@ -19,7 +19,7 @@ class InstagramApi extends AbstractApi
         echo "\n---\n";
         var_dump($this->client);
         echo "\n---\n";
-        var_dump('httpclient: '.$hc);
+        var_dump($hc);
         die('..');
     }
 
