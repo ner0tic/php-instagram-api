@@ -41,13 +41,14 @@ class Users extends InstagramApi
         {
             if( null === parent::getAuthClientId() )
             {
-                return $this->get( 'self/media', $params, $requestOpts );
+                new \Exception( 'You must supply a user id either via a config file or in your method call.' );
+                //return $this->get( 'self/media', $params, $requestOpts );
             }
 
             return $this->get( parent::getAuthClientId() . '/media/recent', $params, $requestOpts );      
         }
 
-        return $this->get( $id . '/media/recent', $params, requestOpts );
+        return $this->get( $id . '/media/recent', $params, $requestOpts );
     }
   
     /**
