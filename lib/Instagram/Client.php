@@ -31,6 +31,8 @@ class Client extends BaseClient
        */
     public function api( $name ) 
     {
+        $name = strtolower( $name );
+        
         if( !isset( $this->apis[ $name ] ) ) 
         {
             switch( $name ) 
