@@ -6,6 +6,24 @@ use Core\Client as BaseClient;
 class Client extends BaseClient 
 {
     /**
+     *
+     * @var string $client_id 
+     */
+    protected $client_id;
+    
+    /**
+     *
+     * @var string $client_secret 
+     */
+    protected $client_secret;
+    
+    /**
+     *
+     * @var string $user_id
+     */
+    protected $user_id;
+    
+    /**
        * Api
        * @param string $name
        * @return api type
@@ -49,5 +67,41 @@ class Client extends BaseClient
         }
         
         return $this->apis[ $name ];
+      }
+      
+      public function setClientId( $client )
+      {
+          $this->client_id = $client;
+          
+          return $this;
+      }
+      
+      public function getClientId()
+      {
+          return $this->client_id;
+      }
+      
+      public function setClientSecret( $secret )
+      {
+          $this->client_secret = $secret;
+          
+          return $this;
+      }
+      
+      public function getClientSecret()
+      {
+          return $this->client_secret;
+      }
+      
+      public function setUserId( $user )
+      {
+          $this->user_id = $user;
+          
+          return $this;
+      }
+      
+      public function getUserId()
+      {
+          return $this->user_id;
       }
   }

@@ -8,7 +8,7 @@ Installation
 Add to composer
 ```js
     "require": {
-        "ner0tic/php-api-core":     "*",
+        "ner0tic/php-api-core":     "2.0.0",
         "ner0tic/php-instagram-api":   "*"
         // ...
 ```
