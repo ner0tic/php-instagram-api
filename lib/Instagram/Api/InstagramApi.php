@@ -13,47 +13,82 @@ class InstagramApi extends AbstractApi
     protected $client = null;
     
     /**
-     * 
      * @param Instagram\Client $client 
      */
-    public function __construct( Client $client = null ) 
+    public function __construct(Client $client = null)
     {
         $this->client = $client instanceof Client ? $client : new Client();
 
-        $this->client->setUrl( 'https://api.instagram.com/v1/:path' );               
+        $this->client->setUrl('https://api.instagram.com/v1/:path');
     }
 
-    public function getAuthClientId() {
+    /**
+     * Return the current auth client id
+     * @return string  auth client id
+     */
+    public function getAuthClientId()
+    {
         return $this->client->getAuthClientId();
     }
     
-    public function setAuthClientId( $id = null )
+    /**
+     * Set the current auth client id
+     * @param string $id auth client id
+     */
+    public function setAuthClientId($id = null)
     {
-        $this->client->setAuthClientId( $id );
+        $this->client->setAuthClientId($id);
     }
 
+    /**
+     * Get an instance of the Client
+     * @return Instagram\Client Client instance
+     */
     public function getClient()
     {
         return $this->client;
     }
 
-    public function setUrl( $url )
+    /**
+     * Set the API URL
+     * @param string $url api url
+     * @return  Instagram\Client Client instance
+     */
+    public function setUrl($url)
     {
-        return $this->client->setUrl( $url );
+        return $this->client->setUrl($url);
     }
     
-    public function setOption( $k, $v )
+    /**
+     * Set a Client option
+     * @param string $name option name
+     * @param string|integer|boolean $value option value
+     * @return  Instagram\Client Client instance
+     */
+    public function setOption($name, $value)
     {
-        return $this->client->setOption( $k, $v );
+        return $this->client->setOption($name, $value);
     }
 
-    public function get( $path, $parameters = array(), $requestOpts = array() )
+    /**
+     * Execute API call
+     * @param  string $path        API URL path
+     * @param  array  $parameters  parameters
+     * @param  array  $requestOpts request options
+     * @return  Instagram\Client Client instance
+     */
+    public function get($path, $parameters = array(), $requestOpts = array())
     {
-        return $this->client->get( $path, $parameters, $requestOpts );
+        return $this->client->get($path, $parameters, $requestOpts);
     }
 
-    public function api( $api )
+    /**
+     * Selects a specific API endpoint
+     * @param  string $api endpoint name
+     * @return  Core\Api\AbstractApi API instance
+     */
+    public function api($api)
     {
-        return $this->client->api( $api );
+        return $this->client->api($api);
     }
 }
