@@ -7,13 +7,13 @@ use Instagram\Client;
 class InstagramApi extends AbstractApi
 {
     /**
-     * 
+     *
      * @var Instagram\Client $client
      */
     protected $client = null;
-    
+
     /**
-     * @param Instagram\Client $client 
+     * @param Instagram\Client $client
      */
     public function __construct(Client $client = null)
     {
@@ -28,16 +28,16 @@ class InstagramApi extends AbstractApi
      */
     public function getAuthClientId()
     {
-        return $this->client->getAuthClientId();
+        return $this->client->getClientId();
     }
-    
+
     /**
      * Set the current auth client id
      * @param string $id auth client id
      */
     public function setAuthClientId($id = null)
     {
-        $this->client->setAuthClientId($id);
+        $this->client->setClientId($id);
     }
 
     /**
@@ -58,7 +58,7 @@ class InstagramApi extends AbstractApi
     {
         return $this->client->setUrl($url);
     }
-    
+
     /**
      * Set a Client option
      * @param string $name option name
