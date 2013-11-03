@@ -1,7 +1,7 @@
 <?php
 namespace Instagram;
 
-use Core\Client as BaseClient;
+use Ner0tic\ApiEngine\Client as BaseClient;
 
 class Client extends BaseClient
 {
